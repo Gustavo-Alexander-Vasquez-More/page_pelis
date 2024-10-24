@@ -1,14 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import Modal_video from '../components/modal_video';
-import logo from '../images/logo.png'
+import Carrousel_cartelera from '../components/carrousel_cartelera';
 import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 export default function index() {
 const [cartelera, setCartelera]=useState()
-const [modal, setModal]=useState(false)
-
-
-console.log(cartelera);
 const key='f1fbb395a697c39e04116e6e3b837637'
 const url_images='https://image.tmdb.org/t/p/original'
 async function getApi() {
@@ -35,7 +31,9 @@ getApi()
   {/* ESTO ES EL NAV */}
   <Navbar/>
 {/* AQUI ABAJO ES TODO LA CARTELERA DE PELICULAS */}
-  <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 p-4 bg-[black]'>
+ <div className='w-full flex flex-col bg-gradient-to-b from-[#0d0d0d] to-[#000000]'>
+ <Carrousel_cartelera/>
+  <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 p-4 '>
   {cartelera?.map(pelis=>(
      <div key={pelis.id} className=' rounded-lg overflow-hidden'>
      <a href={`/movies?id=${pelis.id}`}>
@@ -44,6 +42,8 @@ getApi()
    </div>
   ))}
   </div>
+ </div>
+  <Footer/>
   </div>
   </>
   );

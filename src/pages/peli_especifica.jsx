@@ -25,6 +25,8 @@ export default function peli_especifica() {
         scrollTo(0,0)
         }
         const closeModal=()=>{
+         
+          
           setModal(false)
           setId_peli()
           }
