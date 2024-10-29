@@ -5,6 +5,7 @@ import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 export default function index() {
 const [cartelera, setCartelera]=useState()
+console.log(cartelera);
 const key='f1fbb395a697c39e04116e6e3b837637'
 const url_images='https://image.tmdb.org/t/p/original'
 async function getApi() {
@@ -13,7 +14,7 @@ try {
     params:{
       api_key:key,
       append_to_response:'images, videos',
-      language: 'es-ES',
+      language: 'es-MX',
     }
   })
   setCartelera(data.results)

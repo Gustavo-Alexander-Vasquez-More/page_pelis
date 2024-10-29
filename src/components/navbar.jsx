@@ -2,7 +2,7 @@ import React from 'react';
 import logo from '../images/logo.png'
 export default function navbar() {
   return (
-    <div className='flex justify-between items-center bg-gradient-to-tr from-[#000046] to-[#1CB5E0] px-[1rem] lg:px-[4rem] py-[1.5rem] '>
+    <div className='flex justify-between items-center  bg-gradient-to-tr from-[#000046] to-[#1CB5E0] px-[1rem] lg:px-[4rem] py-[1.5rem] '>
     <div className='lg:w-[15%] w-[60%]'>
     <div class="bg-white bg-opacity-10 rounded-lg p-2 flex justify-center items-center">
   <h1 class="text-4xl font-bold bg-gradient-to-tr from-[#1CB5E0] to-[#81ecec] bg-clip-text text-transparent">

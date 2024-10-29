@@ -7,6 +7,7 @@ export default function carrousel_cartelera() {
     const [cartelera, setCartelera]=useState()
     const [id, setId] = useState();
     const [id_peli, setId_peli]=useState()
+    
     console.log(id_peli);
     const [modal, setModal]=useState(false)
     console.log(cartelera);
@@ -18,9 +19,10 @@ try {
     params:{
       api_key:key,
       append_to_response:'images, videos',
-      language: 'es-ES',
+      language: 'es-MX',
     }
   })
+  
   setCartelera(data.results)
   return data.results
 } catch (error) {}}
@@ -78,9 +80,9 @@ getApi()
           <div className='absolute z-30 text-white flex items-start px-[1rem] lg:px-[7rem] gap-4 flex-col top-[45%] lg:top-[35%] lg:h-[35vh] '>
             <p className=' text-[1rem] lg:text-[3rem] font-semibold'>{pelis.title}</p>
             <p className='text-[1rem] lg:flex hidden font-semibold text-start'>{pelis.overview}</p>
-            <button onClick={()=>openModal(pelis.id)} className='bg-gradient-to-tr from-[#000046] to-[#1CB5E0] px-[0.5rem] lg:px-[2rem] text-[0.8rem] lg:text-[1.1rem] py-[0.5rem] text-white font-semibold rounded-[10px]'>
-              Mirar el avance
-            </button>
+            <a href={`/movies?id=${pelis.id}`} className='bg-gradient-to-tr from-[#000046] to-[#1CB5E0] px-[0.5rem] lg:px-[2rem] text-[0.8rem] lg:text-[1.1rem] py-[0.5rem] text-white font-semibold rounded-[10px]'>
+              Ver detalles
+            </a>
           </div> 
         </div>
       ))}
