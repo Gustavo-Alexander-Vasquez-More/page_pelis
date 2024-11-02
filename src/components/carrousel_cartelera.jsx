@@ -15,7 +15,7 @@ const key='f1fbb395a697c39e04116e6e3b837637'
 const url_images='https://image.tmdb.org/t/p/original'
 async function getApi() {
 try {
-  const {data}=await axios.get('https://api.themoviedb.org/3/discover/movie',{
+  const {data}=await axios.get('https://api.themoviedb.org/3/movie/now_playing',{
     params:{
       api_key:key,
       append_to_response:'images, videos',
