@@ -24,7 +24,7 @@ tablet: {
 },
 mobile: {
   breakpoint: { max: 463, min: 0 },
-  items: 1,
+  items: 2,
 }};
 console.log(cartelera);
 const key='f1fbb395a697c39e04116e6e3b837637'
@@ -52,22 +52,22 @@ getApi()
 }, []);
   return (
   <>
+  <Navbar/>
+ <Carrousel_cartelera/>
  
   <div className='w-full h-auto flex flex-col'>
   {/* ESTO ES EL NAV */}
-  <Navbar/>
 {/* AQUI ABAJO ES TODO LA CARTELERA DE PELICULAS */}
- <div className='w-full flex flex-col bg-[#080F28]'>
- <Carrousel_cartelera/>
-  <div className='w-full flex flex-col h-auto py-[2rem]'>
+ <div className='w-full flex flex-col bg-[#080F28] py-[1rem]'>
+  <div className='w-full flex flex-col h-auto'>
    <div className='flex flex-col gap-2'>
-    <p className='text-white font-semibold text-[1.3rem] pl-[1rem]'>Las más taquilleras de este año</p>
-   <CarouselMulti responsive={responsive}  infinite={true}>
+    <p className='text-white font-semibold lg:text-[1.3rem] pl-[1rem]'>Las más taquilleras de este año</p>
+   <CarouselMulti responsive={responsive} className='z-20'  infinite={true}>
   {cartelera?.map(pelis=>(
     <div className='flex px-[1rem] items-center'>
       <div className="w-full  ">
       <a href={`/movies?id=${pelis.id}`}>
-       <img className='w-full h-full' src={`${url_images}/${pelis.poster_path}`} alt={pelis.title} />
+       <img className='w-full  h-full' src={`${url_images}/${pelis.poster_path}`} alt={pelis.title} />
      </a>
      
       </div>

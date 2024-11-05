@@ -1,17 +1,30 @@
-import React from 'react';
-import logo from '../images/logo.png'
+import React, { useState } from 'react';
+import BurgarNav from './burgarNav';
 export default function navbar() {
+const [openNav, setOpenNav]=useState(false)
+const open=()=>{
+setOpenNav(true)
+}
+const close=()=>{
+setOpenNav(false)
+}
   return (
-    <div className='flex justify-between items-center  bg-gradient-to-tr from-[#000046] to-[#1CB5E0] px-[1rem] lg:px-[4rem] py-[1rem] '>
+   <>
+   {openNav === true && (
+    <BurgarNav  close={close}/>
+   )}
+   <div className='flex justify-between items-center reative bg-gradient-to-tr from-[#000046] to-[#1CB5E0] px-[1rem] lg:px-[4rem] py-[1rem] '>
     <div className='lg:w-[15%] w-[60%]'>
     <div class="bg-white bg-opacity-10 rounded-lg p-2 flex justify-center items-center">
+  <a href="/Home">
   <h1 class="text-4xl font-bold bg-gradient-to-tr from-[#1CB5E0] to-[#81ecec] bg-clip-text text-transparent">
     Filmanity
   </h1>
+  </a>
 </div>
     </div>
     <div className='lg:hidden flex w-[40%] justify-end  items-center'>
-      <button>
+      <button onClick={open}>
       <svg class="w-10 h-10 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
   <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
 </svg>
@@ -46,5 +59,6 @@ export default function navbar() {
   </div>
     </div>
   </div>
+   </>
   );
 }

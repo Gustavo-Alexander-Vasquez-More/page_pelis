@@ -100,10 +100,10 @@ export default function peli_especifica() {
       {/* Overlay para opacar solo el fondo */}
       <div className="absolute inset-0 bg-black opacity-50"></div>
       <div className='w-full lg:h-[65vh] h-auto flex lg:flex-row flex-col'>
-      <div className="lg:w-[30%] w-full lg:py-[4rem] lg:pl-[2rem] lg:h-[65vh] flex justify-center py-[1rem] lg:items-start lg:justify-start z-50">
+      <div className="lg:w-[30%] w-full lg:py-[4rem] lg:pl-[2rem] lg:h-[65vh] flex justify-center py-[1rem] lg:items-start lg:justify-start z-30">
         <img className=" lg:w-[85%] w-[50%] " src={`${url_images}/${data.poster_path}`} alt={data.title} />
       </div>
-      <div className="flex flex-col w-full lg:w-[70%]  lg:pl-[5rem] lg:items-start lg:justify-start lg:py-[4rem] h-auto px-[1rem] text-white lg:h-[65vh] z-50 gap-4 ">
+      <div className="flex flex-col w-full lg:w-[70%]  lg:pl-[5rem] lg:items-start lg:justify-start lg:py-[4rem] h-auto px-[1rem] text-white lg:h-[65vh] z-30 gap-4 ">
         <p className="text-[2rem] font-bold ">{data.title}</p>
       <div className="flex flex-col gap-1">
           <p className="font-bold">⭐⭐⭐⭐⭐ </p>
@@ -122,7 +122,7 @@ export default function peli_especifica() {
 </div>
       </div>
     </div>
-    <div className='w-full  lg:py-0 py-[2rem]  '>
+    <div className='w-full  lg:py-0 py-[1rem]  '>
     {filter_trailer.length > 0 && (
 <>
 <div className='  w-full h-[90vh] hidden lg:flex justify-center items-center'>
@@ -134,7 +134,7 @@ export default function peli_especifica() {
       height={'90%'}
     />
   </div>
-  <div className='h-full px-[2rem]  w-full flex lg:hidden justify-center '>
+  <div className='h-full px-[1rem]  w-full flex lg:hidden justify-center '>
   <ReactPlayer
     url={`https://www.youtube.com/watch?v=${filter_trailer[0].key}`} // Accede al primer elemento directamente
     controls={true}

@@ -5,9 +5,11 @@ export default function footer() {
     <div className='w-full  flex flex-col  px-[4rem] gap-4 py-[2rem] bg-[#080F28]'>
        <div className=' w-[100%] flex lg:flex-row flex-col lg:gap-0 gap-4 items-center justify-between'>
     <div class="bg-white bg-opacity-10 rounded-lg p-2 flex justify-center items-center">
+  <a href="/Home">
   <h1 class="text-4xl font-bold bg-gradient-to-tr from-[#1CB5E0] to-[#81ecec] bg-clip-text text-transparent">
     Filmanity
   </h1>
+  </a>
 </div>
 <div className='flex gap-3 text-white '>
 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
